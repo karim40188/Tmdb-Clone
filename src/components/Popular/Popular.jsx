@@ -20,11 +20,22 @@ function Popular() {
   return (
     <>
       <div className="container">
-        <h2 className="text-2xl   font-semibold">What is Popular</h2>
+        <h2 className="text-4xl  my-8 font-sans font-semibold">What is Popular</h2>
       </div>
       <Swiper
         spaceBetween={10}
-        slidesPerView={7}
+        breakpoints={{
+          0:{
+            slidesPerView:1
+          },
+          640:{
+            slidesPerView:3
+          },
+          1024:{
+            slidesPerView:7
+          }
+        }}
+        
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >

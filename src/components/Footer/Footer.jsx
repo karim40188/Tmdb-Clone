@@ -1,5 +1,6 @@
 import { useState } from "react";
 import logo from "../../assets/gVZIvphd_400x400.jpg";
+
 function Footer() {
   let [links, setLinks] = useState([
     {
@@ -24,26 +25,24 @@ function Footer() {
       ],
     },
   ]);
-  return (
-    <footer className="bg-[#032540]">
-      <div className="container">
-        <div className="flex  justify-around text-white py-3">
-            <div className="w-[150px]">
-            <img className="object-cover object-center w-full" src={logo} alt="" />
 
-            </div>
-          {links.map((link, index) => {
-            return (
-              <ul key={index} className="mt-[50px]">
-                <>
-                  <li className="font-bold text-xl">{link.title}</li>
-                  {link.links.map((link, index) => {
-                    return <li className="cursor-pointer" key={index}>{link}</li>;
-                  })}
-                </>
-              </ul>
-            );
-          })}
+  return (
+    <footer className="bg-[#032540] py-6">
+      <div className="container">
+        <div className="flex flex-wrap justify-between text-white gap-6">
+          <div className="w-full md:w-[150px] flex justify-center md:justify-start">
+            <img className="object-cover object-center w-full max-w-[100px]" src={logo} alt="" />
+          </div>
+          {links.map((link, index) => (
+            <ul key={index} className="w-full sm:w-auto">
+              <li className="font-bold text-xl mb-3">{link.title}</li>
+              {link.links.map((link, index) => (
+                <li className="cursor-pointer mb-2" key={index}>
+                  {link}
+                </li>
+              ))}
+            </ul>
+          ))}
         </div>
       </div>
     </footer>

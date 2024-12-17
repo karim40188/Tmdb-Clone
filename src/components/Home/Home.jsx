@@ -31,7 +31,7 @@ function Home() {
           alt=""
         />
 
-        <div className="container mt-10 absolute top-1/2 -translate-y-1/2 z-50 left-1/2 -translate-x-1/2 text-white">
+        <div className="container mt-10 absolute top-1/2 -translate-y-1/2 z-10 left-1/2 -translate-x-1/2 text-white">
           <h3 className="text-3xl font-semibold ">Welcome.</h3>
           <p className="text-2xl">
             Millions of movies, TV shows and people to discover. Explore now.
@@ -45,11 +45,21 @@ function Home() {
       </div>
 
       <div className="container">
-        <h2 className="text-2xl   font-semibold">Trending</h2>
+        <h2 className="text-4xl font-sans font-semibold my-8">Trending</h2>
       </div>
       <Swiper
         spaceBetween={10}
-        slidesPerView={7}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+          },
+          640: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 7,
+          },
+        }}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
         className="px-4 my-3"

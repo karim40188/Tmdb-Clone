@@ -40,7 +40,17 @@ function UpComing() {
 
         <Swiper
           spaceBetween={10}
-          slidesPerView={6}
+          breakpoints={{
+            0:{
+              slidesPerView:1,
+            },
+            640:{
+              slidesPerView:3
+            },
+            1024:{
+              slidesPerView:7
+            }
+          }}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
           style={{

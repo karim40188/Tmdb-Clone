@@ -16,7 +16,7 @@ function MovieDetails() {
     getDetails();
   }, []);
   return (
-    <div className="flex flex-wrap justify-around mt-5">
+    <div className="flex flex-wrap justify-around my-5">
       <div className="w-1/4">
         <img
           src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`}
@@ -27,13 +27,13 @@ function MovieDetails() {
       <div className="w-2/4  text-gray-700">
         <h2 className="text-3xl mb-3 ">{movieDetails.title}</h2>
         <p>{movieDetails.overview}</p>
-        <ul className="flex gap-3 my-3">
+        <ul className="flex gap-5 my-3">
           {movieDetails?.production_companies?.map((prod) => {
             return (
               // eslint-disable-next-line react/jsx-key
-              <li>
+              <li className="">
                 <img
-                className="w-32  object-contain cursor-pointer"
+                className="w-full object-contain bg-contain cursor-pointer"
                   src={`https://image.tmdb.org/t/p/w500/${prod.logo_path}`}
                   alt=""
                 />
